@@ -32,7 +32,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.post('/upload', upload.single('image'), (req, res) => {
     // Split originalname on "_" and send last two values in the response
     const fileNameParts = req.file.originalname.split('_');
-    const lastTwoValues = fileNameParts.slice(2, 4);
+    const lastTwoValues = fileNameParts.slice(1, 3);
 
     res.json({ lastTwoValues });
 });
